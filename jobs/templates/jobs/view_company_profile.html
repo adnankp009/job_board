@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ employer.company_name }}'s Profile</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'company_profile.css' %}">
+</head>
+<body>
+    <h1>{{ employer.company_name }}'s Profile</h1>
+    {% if employer.profile_picture %}
+        <img src="{{ employer.profile_picture.url }}" alt="{{ employer.company_name }}'s Profile Picture">
+    {% else %}
+        <p>No profile picture available.</p>
+    {% endif %}
+    <div class="company-description">
+        <p><strong>Company Description:</strong></p>
+        <p>{{ employer.company_description }}</p>
+    </div>
+    <a href="{% url 'employer_dashboard' %}">Back to Dashboard</a>
+</body>
+</html>

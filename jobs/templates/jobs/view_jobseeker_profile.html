@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ jobseeker.user.username }}'s Profile</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'jobseeker_profile.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>{{ jobseeker.user.username }}'s Profile</h1>
+        <div class="profile-picture">
+            {% if jobseeker.profile_picture %}
+                <img src="{{ jobseeker.profile_picture.url }}" alt="{{ jobseeker.user.username }}'s Profile Picture">
+            {% else %}
+                <p>No profile picture available.</p>
+            {% endif %}
+        </div>
+        <div class="profile-info">
+            <p><strong>Bio:</strong> {{ jobseeker.bio }}</p>
+            <p><strong>Education:</strong> {{ jobseeker.education }}</p>
+            <p><strong>Current Job:</strong> {{ jobseeker.current_job }}</p>
+            <p><strong>Work Experience:</strong> {{ jobseeker.work_experience }}</p>
+            <p><strong>Resume:</strong> <a href="{{ jobseeker.resume.url }}" class="btn-link">Download Resume</a></p>
+        </div>
+        <a href="{% url 'jobseeker_dashboard' %}" class="btn-back">Back to Dashboard</a>
+    </div>
+</body>
+</html>

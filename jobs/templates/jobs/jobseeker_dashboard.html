@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jobseeker Dashboard</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'jobseeker_dashboard.css' %}">
+</head>
+<body>
+    <h1>Jobseeker Dashboard</h1>
+    <div class="dashboard-links">
+        <a href="{% url 'edit_jobseeker_profile' %}" class="dashboard-link">Manage Profile</a>
+        <a href="{% url 'view_jobseeker_profile' %}" class="dashboard-link">View Your Profile</a>
+        <a href="{% url 'logout' %}" class="dashboard-link">Logout</a>
+        
+    </div>
+    
+    <h2>Available Jobs</h2>
+    <ul class="job-list">
+        {% for job in jobs %}
+            <li class="job-item">
+                {{ job.title }} - Posted by 
+                <a href="{% url 'view_employer_profile' job.employer.id %}" class="employer-link">
+                    {{ job.employer.company_name }}
+                </a>
+                <a href="{% url 'view_job_details' job.id %}" class="job-link">View Details</a> -
+                <a href="{% url 'apply_for_job' job.id %}" class="apply-link">Apply</a>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <h2>Your Applications</h2>
+    <ul class="application-list">
+        {% for application in applications %}
+            <li class="application-item">
+                {{ application.job.title }} - Applied on {{ application.applied_at }}
+                <a href="{% url 'edit_application' application.id %}" class="edit-link">Edit</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

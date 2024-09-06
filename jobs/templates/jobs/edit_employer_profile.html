@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Employer Profile</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'edit_employer_profile.css' %}">
+</head>
+<body>
+    <div class="form-container">
+        <h1>Edit Employer Profile</h1>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Save changes</button>
+        </form>
+        <a href="{% url 'employer_dashboard' %}">Back to Dashboard</a>
+    </div>
+</body>
+</html>

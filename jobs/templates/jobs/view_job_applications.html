@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Applications for {{ job.title }}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'job_applications.css' %}">
+</head>
+<body>
+    <h1>Applications for {{ job.title }}</h1>
+    <a href="{% url 'employer_dashboard' %}" class="back-link">Back to Dashboard</a>
+    <ul>
+        {% for application in applications %}
+            <li>
+                Application by 
+                <a href="{% url 'view_applicant_profile' job.id application.jobseeker.id %}" class="applicant-link">
+                    {{ application.jobseeker.user.username }}
+                </a> - Applied on {{ application.applied_at }}
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

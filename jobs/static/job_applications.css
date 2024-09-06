@@ -1,0 +1,57 @@
+/* styles.css */
+
+/* General Styling for Job Applications Page */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Page Header Styling */
+h1 {
+    color: #007bff; /* Blue color for headings */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Back Link Styling */
+.back-link {
+    display: inline-block;
+    color: #007bff;
+    text-decoration: none;
+    font-size: 16px;
+    margin-bottom: 20px;
+    display: block;
+    text-align: center;
+}
+
+.back-link:hover {
+    color: #0056b3;
+}
+
+/* Application List Styling */
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Applicant Link Styling */
+.applicant-link {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.applicant-link:hover {
+    text-decoration: underline;
+}

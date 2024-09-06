@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employer Dashboard</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'employer_dashboard.css' %}">
+</head>
+<body>
+    <div class="dashboard-container">
+        <h1>Employer Dashboard</h1>
+        <div class="dashboard-links">
+            <a href="{% url 'add_job' %}">Add New Job</a>
+            <a href="{% url 'edit_employer_profile' %}">Manage Profile</a>
+            <a href="{% url 'view_company_profile' %}">View Your Profile</a>
+            <a href="{% url 'logout' %}">Logout</a>
+        </div>
+        <ul>
+            {% for job in jobs %}
+                <li>
+                    {{ job.title }} - posted on {{ job.posted_at }}
+                    <div>
+                        <a href="{% url 'edit_job' job.id %}">Edit</a> 
+                        <a href="{% url 'delete_job' job.id %}">Delete</a>
+                        <a href="{% url 'view_job_applications' job.id %}">View Applications</a>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>

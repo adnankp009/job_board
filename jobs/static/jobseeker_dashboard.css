@@ -1,0 +1,109 @@
+/* styles.css */
+
+/* General Styling for Jobseeker Dashboard Page */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Main Heading Styling */
+h1 {
+    color: #343a40; /* Dark color for main heading */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Dashboard Links Styling */
+.dashboard-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.dashboard-link {
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.dashboard-link:hover {
+    background-color: #0056b3;
+}
+
+/* Job List Styling */
+.job-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.job-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Employer Link Styling */
+.employer-link {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.employer-link:hover {
+    text-decoration: underline;
+}
+
+/* Job Link Styling */
+.job-link {
+    color: #28a745;
+    text-decoration: none;
+}
+
+.job-link:hover {
+    text-decoration: underline;
+}
+
+/* Apply Link Styling */
+.apply-link {
+    color: #dc3545;
+    text-decoration: none;
+}
+
+.apply-link:hover {
+    text-decoration: underline;
+}
+
+/* Applications List Styling */
+.application-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.application-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Edit Link Styling */
+.edit-link {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.edit-link:hover {
+    text-decoration: underline;
+}

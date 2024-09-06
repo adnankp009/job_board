@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ jobseeker.user.username }}'s Profile</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'jobseeker_profile.css' %}">
+</head>
+<body>
+    <h1>{{ applicant.user.username }}'s Profile</h1>
+
+    <div class="profile-picture">
+        {% if applicant.profile_picture %}
+            <img src="{{ applicant.profile_picture.url }}" alt="{{ applicant.user.username }}'s Profile Picture">
+        {% else %}
+            <p>No profile picture available.</p>
+        {% endif %}
+    </div>
+
+    <div class="profile-info">
+        <p>Resume: <a href="{{ applicant.resume.url }}">Download Resume</a></p>
+        <p>Bio: {{ applicant.bio }}</p>
+        <p>Cover Letter: {{ application.cover_letter }}</p>
+        <p>Education: {{ applicant.education }}</p>
+        <p>Current Job: {{ applicant.current_job }}</p>
+        <p>Work Experience: {{ applicant.work_experience }}</p>
+    </div>
+
+    <a href="{% url 'view_job_applications' job.id %}" class="button">Back to Job Applications</a>
+</body>
+</html>

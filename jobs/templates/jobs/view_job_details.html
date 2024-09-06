@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ job.title }} - Job Details</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'job_details.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>{{ job.title }}</h1>
+        <div class="job-details">
+            <p><strong>Company:</strong> {{ job.employer.company_name }}</p>
+            <p><strong>Description:</strong> {{ job.description }}</p>
+            <p><strong>Requirements:</strong> {{ job.requirements }}</p>
+            <p><strong>Location:</strong> {{ job.location }}</p>
+            <p><strong>Salary:</strong> {{ job.salary }}</p>
+            <p><strong>Posted on:</strong> {{ job.posted_at }}</p>
+        </div>
+        <a href="{% url 'jobseeker_dashboard' %}" class="btn-back">Back to Dashboard</a>
+    </div>
+</body>
+</html>
